@@ -1,0 +1,175 @@
+<html>
+<head>
+  <title>mows</title>
+</head>
+<style>
+  /* body{
+    background-image: url(http://www.webdesignhot.com/wp-content/uploads/2010/10/BeautifulBokehVectorBackground.jpg);
+  } */
+  #fieldset3 {
+    border: 2px solid #666;
+    width: 25%;
+    height: 60%;
+    text-align: center;
+    background-color: aqua;
+    float: center;
+    margin-left: 50px;
+    margin-left: 40%;
+    margin-right: 35%;
+  }
+  #fieldset1 {
+    border: 2px solid #666;
+    width: 25%;
+    height: 50%;
+    text-align: center;
+    background-color: aqua;
+    margin-left: 50px;
+    float : left;
+    margin-left: 5%;
+   
+  }
+  #fieldset2 {
+    border: 2px solid #666;
+    width: 25%;
+    height: 50%;
+    text-align: center;
+    background-color: aqua;
+    margin-left: 50px;
+    float : right;
+    /* margin-left: 10%; */
+    /* margin-right: 5%; */
+  }
+  /* #fieldset4{
+    border: 2px solid #666;
+    width: 25%;
+    height: 30%;
+    text-align: center;
+    background-color: aqua;
+    float: left;
+  } */
+  div {
+    border: 2px solid #666;
+    width: 80%;
+    height: 8%;
+    margin-left:  15px;
+  }
+  legend {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+  /* form {
+    
+
+  } */
+  button{
+    margin-top: 5%;
+    margin-left:10px;
+  }
+  /* #button_Red {
+    margin-top: 5%;
+    margin-left:10px;
+    background-color: red;
+    color: white; */
+    /* margin-right:auto;
+    display:block */
+  /* }
+  #button_Green {
+    margin-top: 5%;
+    margin-left:10px;
+    background-color:green;
+    color: white; */
+    /* margin-right:auto;
+    display:block */
+  /* } */
+ 
+</style>
+<body>
+  <!-- <h1>MQTT</h1> -->
+  <fieldset id = "fieldset3">
+      <legend>Connect</legend>
+ 
+      <br>
+      <br>
+      <form >
+        Address: <input type="text" name="address" id = "address" value = "ws://broker.hivemq.com:8000/mqtt"> 
+        </form>
+        <button id = "btn-Connect">Connect</button>
+        <button id = "btn-Disconnect">Disconnect</button>
+        <br>
+        Status
+        <div id = "status">
+        </div>
+        <hr>
+        <h4>Incoming Message</h4>
+       <hr> 
+       </form>
+       <table id ="receiver">
+       <thead>
+       <tr>
+          <th>Topic</th>
+          <th>Message</th>
+          <th>Timestamp</th>
+        </tr>
+        </thead>
+        <tbody id="msg">
+
+        </tbody>
+        </table>
+      </fieldset>
+      <fieldset id = "fieldset1">
+        <legend>Publish</legend>
+        <br>
+        <form>
+          Topic: <input type="text" id="Topic" name="topic" value="cloud" > 
+        </form>
+          <form> 
+          Payload: <input type="text" id="Payload" name=" Payload"> 
+        </form>
+          <button id = "btn-Publish">Publish</button>
+          <hr>
+          <h4>Publish Message</h4>
+          <hr>
+          <table id="publishReceiver">
+            <thead>
+          <tr >
+              <th>Topic</th>
+              <th>Message</th>
+              <th>Timestamp</th>
+          </tr>
+        </thead>
+          <tbody id="msg">
+
+          </tbody>
+          </table>
+        </fieldset>
+        <fieldset id = "fieldset2">
+          <legend>Subscribe</legend>
+          <br>
+          <form>
+            Topic: <input type="text"  id = "sTopic" name="topic" value = "cloud" > 
+            <br>
+          </form>
+            <button id = "btn-Subscribe">Subscribe</button>
+            <button id = "btn-UnSubscribe">UnSubscribe</button>
+            <hr>
+            <h4>Subscribe Message</h4>
+            <hr>
+            <table id="topicReceiver">
+              <thead>
+            <tr>
+                <th>Topic</th>
+                <th>Timestamp</th>
+            </tr>
+          </thead>
+            <tbody id="msg" ></tbody>
+  
+              </tbody>
+          </table>
+        </fieldset>
+         
+</body>
+<script src="scripts/browserMqtt.js"></script>
+<script src="scripts/controller.js"></script>
+</html>
