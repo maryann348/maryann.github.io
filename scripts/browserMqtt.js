@@ -6023,7 +6023,6 @@ MqttClient.prototype._handleConnack = function (packet) {
  */
 /*
 those late 2 case should be rewrite to comply with coding style:
-
 case 1:
 case 0:
   // do not wait sending a puback
@@ -6042,7 +6041,6 @@ default:
   // do nothing but every switch mus have a default
   // log or throw an error about unknown qos
   break;
-
 for now i just suppressed the warnings
 */
 MqttClient.prototype._handlePublish = function (packet, done) {
