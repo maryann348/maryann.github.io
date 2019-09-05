@@ -1,303 +1,4 @@
-<!-- <html>
-<head>
-  <title>mows</title>
-</head>
-<style>
-  body{
-    background-image: url(http://www.webdesignhot.com/wp-content/uploads/2010/10/BeautifulBokehVectorBackground.jpg);
-  }
-  #fieldset3 {
-    border: 2px solid #666;
-    width: 25%;
-    height: 60%;
-    text-align: center;
-    background-color: aqua;
-    float: center;
-    margin-left: 50px;
-    margin-left: 40%;
-    margin-right: 35%;
-  }
-  #fieldset1 {
-    border: 2px solid #666;
-    width: 25%;
-    height: 50%;
-    text-align: center;
-    background-color: aqua;
-    margin-left: 50px;
-    float : left;
-    margin-left: 5%;
-   
-  }
-  #fieldset2 {
-    border: 2px solid #666;
-    width: 25%;
-    height: 50%;
-    text-align: center;
-    background-color: aqua;
-    margin-left: 50px;
-    float : right;
-    margin-left: 10%;
-    margin-right: 5%;
-  }
-  #fieldset4{
-    border: 2px solid #666;
-    width: 25%;
-    height: 30%;
-    text-align: center;
-    background-color: aqua;
-    float: left;
-  }
-  div {
-    border: 2px solid #666;
-    width: 80%;
-    height: 8%;
-    margin-left:  15px;
-  }
-  legend {
-    font-weight: bold;
-    font-size: 30px;
-    margin-left: 35%;
-    margin-right: 35%;
-  }
-  form {
-    
-
-  }
-  button{
-    margin-top: 5%;
-    margin-left:10px;
-  }
-  #button_Red {
-    margin-top: 5%;
-    margin-left:10px;
-    background-color: red;
-    color: white;
-    margin-right:auto;
-    display:block
-  }
-  #button_Green {
-    margin-top: 5%;
-    margin-left:10px;
-    background-color:green;
-    color: white;
-    margin-right:auto;
-    display:block
-  }
- 
-</style>
-<body>
-  <h1>MQTT</h1>
-  <fieldset id = "fieldset3">
-      <legend>Connect</legend>
- 
-      <br>
-      <br>
-      <form >
-        Address: <input type="text" name="address" id = "address" value = "ws://broker.hivemq.com:8000/mqtt"> 
-        </form>
-        <button id = "btn-Connect">Connect</button>
-        <button id = "btn-Disconnect">Disconnect</button>
-        <br>
-        Status
-        <div id = "status">
-        </div>
-        <hr>
-        <h4>Incoming Message</h4>
-       <hr> 
-       </form>
-       <table id ="receiver">
-       <thead>
-       <tr>
-          <th>Topic</th>
-          <th>Message</th>
-          <th>Timestamp</th>
-        </tr>
-        </thead>
-        <tbody id="msg">
-
-        </tbody>
-        </table>
-      </fieldset>
-      <fieldset id = "fieldset1">
-        <legend>Publish</legend>
-        <br>
-        <form>
-          Topic: <input type="text" id="Topic" name="topic" value="cloud" > 
-        </form>
-          <form> 
-          Payload: <input type="text" id="Payload" name=" Payload"> 
-        </form>
-          <button id = "btn-Publish">Publish</button>
-          <hr>
-          <h4>Publish Message</h4>
-          <hr>
-          <table id="publishReceiver">
-            <thead>
-          <tr >
-              <th>Topic</th>
-              <th>Message</th>
-              <th>Timestamp</th>
-          </tr>
-        </thead>
-          <tbody id="msg">
-
-          </tbody>
-          </table>
-        </fieldset>
-        <fieldset id = "fieldset2">
-          <legend>Subscribe</legend>
-          <br>
-          <form>
-            Topic: <input type="text"  id = "sTopic" name="topic" value = "cloud" > 
-            <br>
-          </form>
-            <button id = "btn-Subscribe">Subscribe</button>
-            <button id = "btn-UnSubscribe">UnSubscribe</button>
-            <hr>
-            <h4>Subscribe Message</h4>
-            <hr>
-            <table id="topicReceiver">
-              <thead>
-            <tr>
-                <th>Topic</th>
-                <th>Timestamp</th>
-            </tr>
-          </thead>
-            <tbody id="msg" ></tbody>
-  
-              </tbody>
-          </table>
-        </fieldset>
-         
-</body>
-<script src="scripts/browserMqtt.js"></script>
-<script src="scripts/controller.js"></script>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mqtt</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="mows.css">
-</head>
-<body>
-    <h2>MQTT WEBSITE</h2>
-  column 1
-  <div class="col">
-      <div class="card">
-          <div class="container">
-              <center>
-                  <div class="card-header">
-                      <div class="text-center h4">Broker</div>
-
-                  </div>
-                  <div class="card-body">
-                      <label for="input-broker-ws"> Address:</label>
-
-                      <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
-
-                      <button id="btn-connect">Connect</button>
-
-                      <button class="btn-disconnect">Disconnect</button>
-                  </div>
-              </center>
-              <label for="status" id ="sta" style="text-align:center;">Status:</label>
-
-              <center>
-                  <p id="status"><b><i>Disconnected</i></b></p>
-              </center>
-
-          </div>
-      </div>
-  </div>
-    <div class="container">
-        <br>
-        <div class="row">
-            
-            column 2
-            <div class="col">
-                <div class="card">
-                    <div class="container">
-                        <center>
-                            <div class="card-header">
-                                <div class="text-center h4">Publisher</div>
-                            </div>
-                        </center>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label class="text-left">Topic:</label>
-                                <input type="text" class="form-control" id="topic">
-                            </div>
-                            <div class="form-group">
-                                <label class="text-justify">Message:</label>
-                                <input type="text" class="form-control" id="message">
-                            </div>
-                            <center>
-                                <button id="btn-pub">Publish</button></center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            column 3
-            <div class="col">
-                <div class="card">
-                    <div class="container">
-                        <center>
-                            <div class="card-header">
-                                <div class="text-center h4">Subscriber</div>
-                            </div>
-                        </center>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label class="text-left">Topic:</label>
-                                <input type="text" class="form-control" id="topic-sub">
-                            </div>
-
-                            <center>
-                                <button id="btn-sub" >Subscribe</button>
-                                <button id="btn-unsub" >Unsubscribe</button>
-                            </center>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        
-         row1
-         <br>
-         
-         <div class="table">
-            <h4>Message</h4>
-             <table>
-                 <tr>
-                     <th class="card-header">Topic</th>
-                     <th class="card-header">Payload</th>
-                     <th class="card-header">Timestamp</th>
-                 </tr>
-             </table>
-         </div>
- 
-         
-         <script src="browserMqtt.js"></script>
-         <script src="controller.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
- 
- 
- </body>
- 
- </html> -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -314,7 +15,34 @@
 
 
 <body>
-    <h2>MQTT</h2>
+    <h2>MQTT Website</h2>
+    <div class="col">
+        <div class="card">
+            <div class="container">
+                <center>
+                    <div class="card-header">
+                        <div class="text-center h4">Broker</div>
+
+                    </div>
+                    <div class="card-body">
+                        <label for="input-broker-ws"> Address:</label>
+
+                        <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
+
+                        <button id="btn-connect">Connect</button>
+
+                        <button class="btn-disconnect">Disconnect</button>
+                    </div>
+                </center>
+                <label for="status" id ="sta">Status:</label>
+
+                <center>
+                    <p id="status"><b><i>Disconnected</i></b></p>
+                </center>
+
+            </div>
+        </div>
+    </div>
     <div class="container">
         <br>
         <div class="row">
@@ -370,33 +98,7 @@
         </div>
         <br>
         <!-- column 1 -->
-        <div class="col">
-            <div class="card">
-                <div class="container">
-                    <center>
-                        <div class="card-header">
-                            <div class="text-center h4">Broker</div>
-
-                        </div>
-                        <div class="card-body">
-                            <label for="input-broker-ws"> Address:</label>
-
-                            <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
-
-                            <button id="btn-connect">Connect</button>
-
-                            <button class="btn-disconnect">Disconnect</button>
-                        </div>
-                    </center>
-                    <label for="status" id ="sta">Status:</label>
-
-                    <center>
-                        <p id="status"><b><i>Disconnected</i></b></p>
-                    </center>
-
-                </div>
-            </div>
-        </div>
+        
         
     
         <!-- row1 -->
@@ -422,5 +124,3 @@
 </body>
 
 </html>
-        
-    
