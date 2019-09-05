@@ -1,4 +1,4 @@
-ar client;
+var client;
 
 var btnPublish = $("#publish-btn")
 
