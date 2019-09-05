@@ -1,0 +1,112 @@
+html body{
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1447014886653-534c5b8b85c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80");
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+h2{
+    color: black;
+    font-weight:bold;
+    background-color: white;
+}
+
+.card{
+    height: 330px;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+}
+#content {
+    float: left;
+    width: 100%;
+    background-color: #CCF;
+  }
+  #sidebar {
+    float: right;
+    width: 100px;
+    margin-right: -100px;
+    background-color: #FFA;
+  }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.form-control{
+    border-width:5px;  
+    border-style:groove;
+}
+#status{
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+button{
+    border-width:2px;  
+    border-style:ridge;
+}
+h4{
+   color: white; 
+   text-align: center;
+   margin-left: 40%;
+   margin-right: 46%;
+   font-weight: bold;
+   /* background-color: #5351516b; */
+   /* border-style: outset; */
+}
+h2{
+    font-family: fantasy;
+    text-align: center;
+    padding-top: 20px;
+}
+ .table{
+    
+    overflow-y: auto; 
+    height: 200px;
+    background-color: black;
+   
+ }
+table th{ 
+    position: sticky;
+    top: 0; 
+    }
+
+table  { 
+    
+    border-collapse: collapse; 
+    width: 100%; 
+    
+    
+
+}
+td , tr { 
+    padding: 8px 16px;
+    border: 2px solid white;
+}
+th     { 
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    
+}
+
+
+#btn-unsub:hover, .btn-disconnect:hover{
+    background-color: red;
+    color: white;
+}
+#btn-pub:hover ,#btn-sub:hover ,#btn-connect:hover{
+    background-color: green;
+    color: white;
+}
+#btn-connect:hover{
+    background-color: green;;
+    color: white;
+}
