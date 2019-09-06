@@ -11,7 +11,7 @@ var btnPublish = $("#publish-btn")
 
 
 // client.publish("mqtt/demo", "hello world!")
-$('#btn-connect').on('click', function () {
+$('#Btn_Connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
   client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
@@ -39,7 +39,7 @@ $('#btn-connect').on('click', function () {
 
   //Publish 
   
-  $("#btn-pub").click(function () {
+  $("#Btn_Pub").click(function () {
     var topic = $("#topic").val();
     var message = $("#message").val();
     if (topic == "" || message == "") {
@@ -58,7 +58,7 @@ $('#btn-connect').on('click', function () {
   })
 
   //Subscribe
-  $("#btn-sub").click(function () {
+  $("#Btn_Sub").click(function () {
     var topsub = $("#topic-sub").val();
     if (topsub == "") {
       Swal.fire({
@@ -74,7 +74,7 @@ $('#btn-connect').on('click', function () {
       })
     }
   })
-  $("#btn-unsub").click(function () {
+  $("#Btn_UnSub").click(function () {
     var topsub = $("#topic-sub").val();
     if (topsub == "") {
       Swal.fire({
@@ -88,8 +88,8 @@ $('#btn-connect').on('click', function () {
         title: 'Unsubscribe Successfully',
       })
     }
-    $("#btn-unsub").removeClass("alert-success")
-    $("#btn-unsub").addClass("alert-secondary")
+    $("#Btn_UnSub").removeClass("alert-success")
+    $("#Btn_UnSub").addClass("alert-secondary")
   })//end unsubscribe
   //Message
   client.on("message", function (topic, payload) {
@@ -105,48 +105,3 @@ $('#btn-connect').on('click', function () {
 
 
 
-// client.subscribe("mqtt/demo")
-
-// btnPublish.on('click', function (e) {
-//   e.preventDefault();
-//   console.log("publish button clicked..")
-//   client.publish("mqtt/demo", "hi I'm Jessa Mae good Morning")
-
-//   client.on("message", function (topic, payload) {
-//     console.log([topic, payload].join(": "));
-//     // client.end();
-
-
-
-//   })
-//   // client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-
-// })
-
-
-// // advance functionalities
-// client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-// client.subscribe("mqtt/demo", function (err){
-//   if (err){
-//     console.log(err);
-//   } else {
-//     console.log("subscribed")
-//   }
-// })
-
-// client.on("connect", function(){
-//     console.log("Successfully connected");
-// })
-
-// client.on("message", function (topic, payload) {
-//   console.log([topic, payload].join(": "));
-//   client.end();
-// })
-
-// client.publish("mqtt/demo", "hello world!", function(err){
-//   if (err){
-//     console.log(err)
-//   } else {
-//     console.log("published")
-//   }
-// })
