@@ -17,7 +17,7 @@ h2{
     color:white;
     font-weight: bold;
 }
-.Form_Controller{
+.form-control{
     border-width:5px;  
     border-style:groove;
 }
