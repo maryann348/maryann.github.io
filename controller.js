@@ -23,11 +23,10 @@ $('#Btn_connect').on('click', function () {
   // $("#status").addClass("alert-warning")
   client.on("connect", function () {
     console.log("succ")
-    $("#status").text("Connected Successfully!")
+    $("#status").text("Connected !!")
     $("#status").css("color", "green")
     $("#status").css("font-style", "italic")
     $("#status").css("font-weight", "bold")
-    $("#status").css("font-size", "10px")
     // $("#status").removeClass("alert-warning")
     // $("#status").addClass("alert-success")
   });// end connect
