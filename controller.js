@@ -11,7 +11,7 @@ var btnPublish = $("#publish-btn")
 
 
 // client.publish("mqtt/demo", "hello world!")
-$('#Btn_Connect').on('click', function () {
+$('#Btn_connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
   client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
