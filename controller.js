@@ -95,12 +95,12 @@ $('#Btn_connect').on('click', function () {
   client.on("message", function (topic, payload) {
     console.log("Recieved Topic: "+topic+"Payload: "+payload)
     var row = $("<tr>")
-    $("<td>" ).text(topic).appendTo($(row))
-    $("<td>").text(payload).appendTo($(row))
-    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row))
-    $("tbody").append($(row))
-    $("<td>" ).css("font-weight","bold")
-    $("<td>" ).css("color","white")
+    $("<td>" ).text(topic).appendTo($(row)).css("font-weight","bold").css("color","white")
+    $("<td>").text(payload).appendTo($(row)).css("font-weight","bold").css("color","white")
+    $("<td>").text(moment().format('MMMM Do YYYY, h:mm:ss a')).appendTo($(row)).css("font-weight","bold").css("color","white")
+    $("tbody").append($(row)).css("font-weight","bold").css("color","white")
+    // $("<td>" ).css("font-weight","bold")
+    // $("<td>" ).css("color","white")
     // console.log([topic, payload].join(": "));
   })
 })//end of click
