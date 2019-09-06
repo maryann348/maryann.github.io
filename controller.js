@@ -15,26 +15,26 @@ $('#Btn_connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
   client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
-  $("#status").text("Connecting....")
-  $("#status").css("color", "yellow")
-  $("#status").css("font-style", "italic")
-  $("#status").css("font-weight", "bold")
+  $("#Status").text("Connecting....")
+  $("#Status").css("color", "yellow")
+  $("#Status").css("font-style", "italic")
+  $("#Status").css("font-weight", "bold")
   // $("#status").removeClass("alert-secondary")
   // $("#status").addClass("alert-warning")
   client.on("connect", function () {
     console.log("succ")
-    $("#status").text("Connected!!")
-    $("#status").css("color", "green")
-    $("#status").css("font-style", "italic")
-    $("#status").css("font-weight", "bold")
+    $("#Status").text("Connected!!")
+    $("#Status").css("color", "green")
+    $("#Status").css("font-style", "italic")
+    $("#Status").css("font-weight", "bold")
     // $("#status").removeClass("alert-warning")
     // $("#status").addClass("alert-success")
   });// end connect
 
   $(".btn-disconnect").click(function () {
     client.end();
-    $("#status").text("Disconnected")
-    $("#status").css("color", "red")
+    $("#Status").text("Disconnected")
+    $("#Status").css("color", "red")
   })//end disconnect
 
   //Publish 

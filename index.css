@@ -21,7 +21,7 @@ h2{
     border-width:5px;  
     border-style:groove;
 }
-#status{
+#Status{
     color: red;
     font-weight: bold;
     font-size: 30px;
