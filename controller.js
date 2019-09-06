@@ -8,7 +8,7 @@ $('#Btn_connect').on('click', function () {
   console.log("connect button clicked..")
   client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
   $("#Status").text("Connecting....")
-  $("#Status").css("color", "blue")
+  $("#Status").css("color", "yellow")
   $("#Status").css("font-style", "italic")
   $("#Status").css("font-weight", "bold")
   client.on("connect", function () {
