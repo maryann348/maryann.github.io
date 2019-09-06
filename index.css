@@ -76,7 +76,7 @@ th     {
 }
 
 
-#Btn_UnSub:hover, .Btn_DisConnect:hover{
+#Btn_UnSub:hover, .Btn_disConnect:hover{
     background-color: red;
     color: white;
 }
