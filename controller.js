@@ -1,16 +1,8 @@
 // basic functionalities
 var client;
 
-var btnPublish = $("#publish-btn")
+var btnPublish = $("#Btn-Publish")
 
-
-// client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt")
-// client.subscribe("mqtt/demo")
-
-
-
-
-// client.publish("mqtt/demo", "hello world!")
 $('#Btn_connect').on('click', function () {
   // connect
   console.log("connect button clicked..")
@@ -19,25 +11,21 @@ $('#Btn_connect').on('click', function () {
   $("#Status").css("color", "yellow")
   $("#Status").css("font-style", "italic")
   $("#Status").css("font-weight", "bold")
-  // $("#status").removeClass("alert-secondary")
-  // $("#status").addClass("alert-warning")
   client.on("connect", function () {
     console.log("succ")
     $("#Status").text("Connected!!")
     $("#Status").css("color", "green")
     $("#Status").css("font-style", "italic")
     $("#Status").css("font-weight", "bold")
-    // $("#status").removeClass("alert-warning")
-    // $("#status").addClass("alert-success")
-  });// end connect
+    
+  });
 
   $(".btn-disconnect").click(function () {
     client.end();
     $("#Status").text("Disconnected")
     $("#Status").css("color", "red")
-  })//end disconnect
+  })
 
-  //Publish 
   
   $("#Btn_Pub").click(function () {
     var topic = $("#topic").val();
@@ -57,7 +45,6 @@ $('#Btn_connect').on('click', function () {
     }
   })
 
-  //Subscribe
   $("#Btn_Sub").click(function () {
     var topsub = $("#topic-sub").val();
     if (topsub == "") {
@@ -90,8 +77,7 @@ $('#Btn_connect').on('click', function () {
     }
     $("#Btn_UnSub").removeClass("alert-success")
     $("#Btn_UnSub").addClass("alert-secondary")
-  })//end unsubscribe
-  //Message
+  })
   client.on("message", function (topic, payload) {
     console.log("Recieved Topic: "+topic+"Payload: "+payload)
     var row = $("<tr>")
@@ -101,7 +87,7 @@ $('#Btn_connect').on('click', function () {
     $("tbody").append($(row))
     
   })
-})//end of click
+})
 
 
 
