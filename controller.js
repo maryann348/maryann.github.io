@@ -27,6 +27,7 @@ $('#Btn_connect').on('click', function () {
     $("#status").css("color", "green")
     $("#status").css("font-style", "italic")
     $("#status").css("font-weight", "bold")
+    $("#status").css("font-size", "10px")
     // $("#status").removeClass("alert-warning")
     // $("#status").addClass("alert-success")
   });// end connect
