@@ -16,6 +16,9 @@
 
 <body>
     <h2>MQTT Website</h2>
+    <div class="container">
+        <br>
+        <div class="row">
     <div class="col">
         <div class="card">
             <div class="container">
@@ -29,23 +32,21 @@
 
                         <input type="text" class="form-control" id="input-broker-ws" value="wss://test.mosquitto.org:8081/mqtt"><br>
 
-                        <button id="btn-connect">Connect</button>
+                        <button id="Btn-Connect">Connect</button>
 
-                        <button class="btn-disconnect">Disconnect</button>
+                        <button class="Btn_DisConnect">Disconnect</button>
                     </div>
                 </center>
                 <label for="status" id ="sta">Status:</label>
 
                 <center>
-                    <p id="status"><b><i>Disconnected</i></b></p>
+                    <p id="status"><b><i></i></b></p>
                 </center>
 
             </div>
         </div>
     </div>
-    <div class="container">
-        <br>
-        <div class="row">
+   
             
             <!-- column 2 -->
             <div class="col">
@@ -66,7 +67,7 @@
                                 <input type="text" class="form-control" id="message">
                             </div>
                             <center>
-                                <button id="btn-pub">Publish</button></center>
+                                <button id="Btn_Pub">Publish</button></center>
                         </div>
                     </div>
                 </div>
@@ -87,8 +88,8 @@
                             </div>
 
                             <center>
-                                <button id="btn-sub" >Subscribe</button>
-                                <button id="btn-unsub" >Unsubscribe</button>
+                                <button id="Btn_Sub" >Subscribe</button>
+                                <button id="Btn_UnSub" >Unsubscribe</button>
                             </center>
 
                         </div>
@@ -97,15 +98,12 @@
             </div>
         </div>
         <br>
-        <!-- column 1 -->
-        
-        
-    
-        <!-- row1 -->
+  <!-- row1 -->
         <br>
-        <h4>Message</h4>
+        
         <div class="table">
             <table>
+                    <h4>Message</h4>
                 <tr>
                     <th class="card-header">Topic</th>
                     <th class="card-header">Payload</th>

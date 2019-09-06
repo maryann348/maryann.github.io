@@ -75,15 +75,15 @@ th     {
 }
 
 
-#btn-unsub:hover, .btn-disconnect:hover{
+#Btn_UnSub:hover, .Btn_DisConnect:hover{
     background-color: red;
     color: white;
 }
-#btn-pub:hover ,#btn-sub:hover ,#btn-connect:hover{
+#Btn_Pub:hover ,#Btn_Sub:hover ,#Btn_Connect:hover{
     background-color: green;
     color: white;
 }
-#btn-connect:hover{
+/* #btn-connect:hover{
     background-color: green;;
     color: white;
-}
+} */
