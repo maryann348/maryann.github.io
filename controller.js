@@ -22,7 +22,7 @@ $('#Btn_connect').on('click', function () {
 
   $(".btn-disconnect").click(function () {
     client.end();
-    $("#Status").text("Disconnected")
+    $("#Status").text("DisConnected")
     $("#Status").css("color", "red")
   })
 
