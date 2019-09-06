@@ -20,7 +20,7 @@ $('#Btn_connect').on('click', function () {
     
   });
 
-  $("#Btn_DisConnect").click(function () {
+  $("#Btn_disConnect").click(function () {
     client.end();
     $("#Status").text("DisConnected")
     $("#Status").css("color", "red")
